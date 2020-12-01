@@ -106,7 +106,7 @@ public class Controller {
             catch (Exception ee){
                 System.out.println("This is wrong");
             }
-            //game.loadConfig();
+            game.loadConfig();
             NEWGAME.setOpacity(0);
             NEWGUESS.setOpacity(100);
             rowcounter = 1;
@@ -128,7 +128,7 @@ public class Controller {
                     checkgame();
                     resetCounter();
                     rowcounter++;
-                    if(rowcounter != game.getRows() + 1 || !win)
+                    if(rowcounter != game.getRows() + 1 || (win && rowcounter < game.getRows() + 1))
                         createHbox();
                 }
             });

@@ -131,13 +131,6 @@ public class GameCode {
         setPins();
     }
 
-//    public Configurations settings(){
-//        return new Configurations();
-//    }
-//
-//    public BaseConfiguration config1() throws ConfigurationException {
-//        return settings().properties(new File("mmind.properties"));
-//    }
     Configurations settings = new Configurations();
     BaseConfiguration config = settings.properties(new File("mmind.properties"));
 
@@ -177,6 +170,7 @@ public class GameCode {
         yesbtn.setOnAction((event) -> {
             try {
                 config.setProperty("dupsAllowedInCode",true);
+                k = true;
             } catch (Exception e) {
                 System.out.println("wrong");
             }
@@ -184,28 +178,28 @@ public class GameCode {
         nobtn.setOnAction((event) -> {
             try {
                 config.setProperty("dupsAllowedInCode",false);
+                k = false;
             } catch (Exception e) {
                 System.out.println("wrong");
             }
         });
         row8.setOnAction((event) -> {
             try {
-                config.setProperty("codeRows",2);
-                System.out.println(config.getInt("codeRows"));
+                config.setProperty("codeRows",8);
             } catch (Exception e) {
                 System.out.println("wrong");
             }
         });
         row10.setOnAction((event) -> {
             try {
-                config.setProperty("codeRows",4);
+                config.setProperty("codeRows",10);
             } catch (Exception e) {
                 System.out.println("wrong");
             }
         });
         row12.setOnAction((event) -> {
             try {
-                config.setProperty("codeRows",6);
+                config.setProperty("codeRows",12);
             } catch (Exception e) {
                 System.out.println("wrong");
             }
